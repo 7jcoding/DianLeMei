@@ -1,0 +1,22 @@
+extends layout
+//header
+block header
+  style(type="text/css").
+    body{background: #ccc;}
+//content
+block content
+  h1= title
+  p Welcome to #{title}
+  div.navbar.navbar-inverse
+    div.nav-collapse
+        ul.nav
+            li.active: a(href="#") home
+            li: a(href="#") Page One
+            li: a(href="#") Page Two
+//footer
+block footer
+  script(type="text/javascript").
+    function info(){
+        console.log('footer block.');
+    }
+    info();
