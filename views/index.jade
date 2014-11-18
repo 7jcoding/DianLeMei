@@ -1,18 +1,16 @@
 extends layout
 //header
 block header
-  style(type="text/css").
-    body{background: #ccc;}
 //content
 block content
-  h1= title
-  p Welcome to #{title}
-  div.navbar.navbar-inverse
-    div.nav-collapse
-        ul.nav
-            li.active: a(href="#") home
-            li: a(href="#") Page One
-            li: a(href="#") Page Two
+  div.container
+    h1= title
+    small node express
+    p.lead Welcome to #{title}
+    blockquote
+        p
+            凌冬将至.
+            我是黑暗中的利剑，长城上的守卫，抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。
 //footer
 block footer
   script(type="text/javascript").
