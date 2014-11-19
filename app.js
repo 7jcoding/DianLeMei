@@ -56,5 +56,16 @@ app.use(function(err, req, res, next) {
     });
 });
 
+var mysql = require('./utilities/mysql');
+
+mysql.query('SELECT * FROM ADMINS',function(result){
+    console.log('The result is: ', result);
+});
+
+var sql = "INSERT INTO ADMINS(ID,User,Power,Sex) VALUES (0,?,?,?)";
+var params = ['test02','r','男'];
+mysql.query(sql,params,function(result){
+    console.log(result);
+});
 
 module.exports = app;
