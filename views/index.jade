@@ -9,6 +9,9 @@ block content
     p.lead Welcome to #{title}
     blockquote
         p
+            -if(user){
+               i #{user.UserName}，
+            -}
             凌冬将至.
             我是黑暗中的利剑，长城上的守卫，抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。
 //footer
