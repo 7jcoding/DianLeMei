@@ -9,8 +9,8 @@ exports.add = function(model,handler){
 };
 exports.update = function(model,handler){
     db.execute({
-        sql: 'UPDATE ADMINS SET (UserName = ?,UserPwd = ?) WHERE ID = ?',
-        params: [model.ID,model.UserName,model.UserPwd],
+        sql: 'UPDATE ADMINS SET UserName = ?,UserPwd = ? WHERE ID = ?',
+        params: [model.UserName,model.UserPwd,model.ID],
         handler: handler
     });
 };
