@@ -13,6 +13,7 @@ router.get('/', function(req, res) {
           description: 'this is express demo.',
           user: user
       };
+      console.log(model.user);
       res.render('index', model);
   });
 });

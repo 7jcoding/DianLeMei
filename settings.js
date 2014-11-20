@@ -3,5 +3,5 @@ module.exports = {
     mysql_user: 'root',
     mysql_pwd: 'root',
     mysql_port: '3306',
-    mysql_database: 'test'
+    mysql_database: 'blog'
 };
