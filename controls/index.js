@@ -1,5 +1,5 @@
 // index
-exports.index = function(err,req,res,next) {
+exports.index = function(req,res,next) {
     var user = null;
     admin.getModel(1,function(results){
         user = results[0];
@@ -9,8 +9,6 @@ exports.index = function(err,req,res,next) {
             description: 'this is express demo.',
             user: user
         };
-        console.log(model.user);
-        if (err) return next(err);
         res.render('index', model);
     });
 }
