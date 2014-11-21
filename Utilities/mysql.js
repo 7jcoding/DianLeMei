@@ -1,14 +1,14 @@
 /**
  * mysql数据库操作模块
  */
-var settings = require('../settings');
+var config = require('../config');
 var mysql = require('mysql');
 var options = {
-    host     : settings.mysql_host,
-    user     : settings.mysql_user,
-    password : settings.mysql_pwd,
-    port     : settings.mysql_port,
-    database : settings.mysql_database
+    host     : config.mysql_host,
+    user     : config.mysql_user,
+    password : config.mysql_pwd,
+    port     : config.mysql_port,
+    database : config.mysql_database
 };
 var pool = mysql.createPool(options);
 /**
@@ -16,9 +16,9 @@ var pool = mysql.createPool(options);
  * 调用示例：
  var mysql = require('./utilities/mysql');
  var options = {
-    sql: 'INSERT INTO ADMINS(ID,UserName,UserPwd) VALUES (0,?,?)',
-    params: ['test03','test03'],
-    handler :function(result) {
+    sql: 'INSERT INTO ADMINS(ID,UserName,UserPwd) VALUES (0,?,?)',  //sql执行语句
+    params: ['test03','test03'],    //sql语句中的参数
+    handler :function(result) {     //执行后的回调函数
         console.log('Insert result is: \r\n', result);
     }
 };

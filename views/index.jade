@@ -6,11 +6,11 @@ block content
   div.container
     h1= title
     small node express
-    p.lead Welcome to #{title}
+    p.lead Welcome to #{author}
     blockquote
         p
             -if(user != null){
-               i #{user}，
+               i #{user.user_name + ' ' + user.user_power}，
             -}
             |凌冬将至.
             |我是黑暗中的利剑，长城上的守卫，抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。

@@ -1,12 +1,14 @@
 // index
+var config = require('../config');
+var admin = require('./admins');
 exports.index = function(req,res,next) {
-    var user = null;
     admin.getModel(1,function(results){
         user = results[0];
         var model = {
-            title: 'Express',
-            keywords: 'express nodejs.',
-            description: 'this is express demo.',
+            title: config.site_name,
+            author: config.site_author,
+            keywords: config.site_keywords,
+            description: config.site_description,
             user: user
         };
         res.render('index', model);
