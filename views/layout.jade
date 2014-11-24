@@ -6,8 +6,8 @@ html
     meta(name="keywords", content="#{keywords}")
     meta(name="author", content="#{author}")
     title= title
-    link(rel="stylesheet", href="/css/base.css")
     link(rel="stylesheet", href="/css/bootstrap.css")
+    link(rel="stylesheet", href="/css/base.css")
     block header
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,11 +48,10 @@ html
                     button.btn.btn-default(type='submit') 提交
 
   block content
-
-  div.container
-    hr
+  div.container.bs
+    div.row.about-link
     div.copyright
-        | Copyright (C) 2014
+        | Copyright &copy; 2014
         a(href='http://www.bandari.net') Bandari.Net
         | All Rights Reserved. Designed by
         a(href='http://t.qq.com/ibandari') iSunny

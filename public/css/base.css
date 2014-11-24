@@ -1,3 +1,12 @@
 body{background: url('/images/bg.png') repeat;}
 .form-group{margin-right:3px;}
+.about-link{height: 31px;
+    line-height: 31px;
+    background-color: #333;
+    text-align: center;
+    color: #5d5d5d;
+    font-size: 12px;
+    box-shadow: 0 2px 2px #c6c6c6;}
+.copyright{padding:20px 0;}
 .copyright a{margin:auto 0.5em;}
+.bs{ background:#fff; box-shadow:2px 0 5px rgba(214, 214, 215, 0.9), -2px 0 5px rgba(214, 214, 215, 0.9);}
