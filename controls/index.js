@@ -11,6 +11,9 @@ exports.index = function(req,res,next) {
             description: config.site_description,
             user: user
         };
+        //res.cookie('name', loginname, {maxAge:600000, httpOnly:true, path:'/', secure:true});
+        res.cookie('nodeCookie','express cookie value',{maxAge:6000,httpOnly:true,path:'/',secure:true});
+        //console.log("Cookies: ", req.cookie('nodeCookie'));
         res.render('index', model);
     });
 }

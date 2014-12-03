@@ -9,6 +9,7 @@ exports.mapRoute = function(app){
     app.get('/tools/html2jade',index.html2jade);
     // user
     app.get('/user/login/',user.login);
+    app.all('/user/register/',user.register);
     // article
     app.get('/manager/article_add',article.add);
 }

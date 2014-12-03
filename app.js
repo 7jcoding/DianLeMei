@@ -4,7 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var session = require('express-session');
+var redisStore = require('connect-redis')(session);
+var config = require('./config');
 var routes = require('./routes');
 var app = express();
 
@@ -18,6 +20,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+    secret:config.site_secret,
+    store:new redisStore({
+        host:config.redis_host,
+        port:config.redis_port,
+        //此属性可选。redis可以进行分库操作。若无此参数，则不进行分库
+        db:config.redis_database
+    })
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes config
@@ -54,6 +65,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-module.exports = app;
-
 app.listen(process.env.PORT);
+
+module.exports = app;
